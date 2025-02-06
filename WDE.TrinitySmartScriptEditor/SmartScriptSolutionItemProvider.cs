@@ -61,7 +61,7 @@ namespace WDE.TrinitySmartScriptEditor
     {
         private readonly Lazy<ICreatureEntryOrGuidProviderService> creatureEntryProvider;
 
-        public SmartScriptCreatureProvider(Lazy<ICreatureEntryOrGuidProviderService> creatureEntryProvider) : base("Creature Script",
+        public SmartScriptCreatureProvider(Lazy<ICreatureEntryOrGuidProviderService> creatureEntryProvider) : base("生物脚本",
             "Script any npc in game.",
             "document_creature_big",
             SmartScriptType.Creature)
@@ -102,7 +102,7 @@ namespace WDE.TrinitySmartScriptEditor
     {
         private readonly Lazy<IGameobjectEntryOrGuidProviderService> goProvider;
 
-        public SmartScriptGameobjectProvider(Lazy<IGameobjectEntryOrGuidProviderService> goProvider) : base("Gameobject Script",
+        public SmartScriptGameobjectProvider(Lazy<IGameobjectEntryOrGuidProviderService> goProvider) : base("游戏对象脚本",
             "Create script for object, including transports.",
             "document_gobject_big",
             SmartScriptType.GameObject)

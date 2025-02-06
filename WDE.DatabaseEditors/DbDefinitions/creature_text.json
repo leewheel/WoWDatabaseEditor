@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "Azeroth", "TrinityCata"
   ],
-  "name": "Creature texts",
+  "name": "生物文本",
   "description": "Creature texts that can be spoken via custom creature scripts",
   "table_name": "creature_text",
   "table_index_name": "CreatureID",

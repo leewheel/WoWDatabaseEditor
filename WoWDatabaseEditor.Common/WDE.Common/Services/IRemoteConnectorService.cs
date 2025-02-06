@@ -46,7 +46,7 @@ namespace WDE.Common.Services
 
     public class CouldNotConnectToRemoteServer : Exception
     {
-        public CouldNotConnectToRemoteServer(Exception inner) : base("Couldn't connect to the remote server", inner)
+        public CouldNotConnectToRemoteServer(Exception inner) : base("不能连接远程服务器", inner)
         {
         }
     }

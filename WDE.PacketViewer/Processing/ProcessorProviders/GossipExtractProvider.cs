@@ -16,7 +16,7 @@ namespace WDE.PacketViewer.Processing.ProcessorProviders
             this.processor = processor;
         }
         
-        public string Name => "Gossip menus";
+        public string Name => "ÓÎÏ·²Ëµ¥";
         public string Description => "Generates query for gossip_menu and gossip_menu_option tables";
         public string Extension => "sql";
         public ImageUri? Image => new ImageUri("Icons/gossip.png");

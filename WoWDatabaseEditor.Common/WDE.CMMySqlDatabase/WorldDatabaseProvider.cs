@@ -51,9 +51,9 @@ namespace WDE.CMMySqlDatabase
             {
                 impl = nullWorldDatabaseProvider;
                 PublishLoadedEvent();
-                messageBoxService.ShowDialog(new MessageBoxFactory<bool>().SetTitle("Database error")
+                messageBoxService.ShowDialog(new MessageBoxFactory<bool>().SetTitle("数据库错误")
                     .SetIcon(MessageBoxIcon.Error)
-                    .SetMainInstruction("Couldn't connect to the database")
+                    .SetMainInstruction("不能连接到数据库！")
                     .SetContent(e.Message)
                     .WithOkButton(true)
                     .Build());

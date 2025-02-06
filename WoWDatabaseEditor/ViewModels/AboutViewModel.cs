@@ -40,25 +40,25 @@ namespace WoWDatabaseEditorCore.ViewModels
             this.dbcStore = dbcStore;
             this.remoteConnectorService = remoteConnectorService;
 
-            ConfigurationChecks.Add(new ConfigurationCheckup(coreVersion.Current is not UnspecifiedCoreVersion, 
-                "Core version compatibility mode", 
-                "WoW Database Editor supports multiple WoW server cores. In order to achieve maximum compatibility, choose version that matches best.\nYou are using: " + coreVersion.Current.FriendlyName + " compatibility mode now."));
+            ConfigurationChecks.Add(new ConfigurationCheckup(coreVersion.Current is not UnspecifiedCoreVersion,
+                "核心版本兼容模式",
+                "WoW 数据库编辑器支持多个 WoW 服务器核心。为了实现最大兼容性，请选择最匹配的版本。\n您正在使用: " + coreVersion.Current.FriendlyName + " 兼容模式。"));
             
             ConfigurationChecks.Add(new ConfigurationCheckup(dbcStore.IsConfigured, 
-                "DBC settings", 
-                "DBC is DataBaseClient files provided with WoW client. Those contain a lot of useful stuff for scripting like spells data. For maximum features you have to provide DBC files path. All WoW servers require those files to work so if you have working core, you must have DBC files already."));
+                "DBC 设定",
+                "DBC 是随 WoW 客户端提供的 DataBaseClient 文件。其中包含很多有用的脚本内容，例如法术数据。要获得最大功能，您必须提供 DBC 文件路径。所有 WoW 服务器都需要这些文件才能运行，因此如果您有可运行的核心，则必须已经拥有 DBC 文件。"));
             
-            ConfigurationChecks.Add(new ConfigurationCheckup(databaseProvider.IsConnected, 
-                "Database connection", 
-                "WoW Database Editor is database editor by design. It stores all data and loads things from wow database. Therefore to activate all features you have to provide wow compatible database connection settings."));
+            ConfigurationChecks.Add(new ConfigurationCheckup(databaseProvider.IsConnected,
+                "数据库连接",
+                "WoW 数据库编辑器在设计上就是数据库编辑器。它存储所有数据并从 wow 数据库加载内容。因此，要激活所有功能，您必须提供与 wow 兼容的数据库连接设置。"));
 
             ConfigurationChecks.Add(new ConfigurationCheckup(remoteConnectorService.HasValidSettings,
-                "Remote connection",
-                "WDE can invoke reload commands for you for faster work. To enable that, you have to enable remote connection in your worldserver configuration and provide details in the settings."));
+                "远程连接",
+                "WDE 可以为您调用重新加载命令以加快工作速度。要启用此功能，您必须在 worldserver 配置中启用远程连接并在设置中提供详细信息。"));
 
             ConfigurationChecks.Add(new ConfigurationCheckup(sourceCodePathService.SourceCodePaths.Count > 0,
-                "Source code integration",
-                "WDE can integrate with source code of your server. Find Anywhere can search in the source code."));
+                "源代码集成",
+                "WDE 可以与你的服务器源代码集成。任何时候可以在源代码中进行搜索。"));
 
             AllConfigured = ConfigurationChecks.All(s => s.Fulfilled);
 

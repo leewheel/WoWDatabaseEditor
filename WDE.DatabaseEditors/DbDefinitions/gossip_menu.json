@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "TrinityCata", "TrinityMaster"
   ],
-  "name": "Gossip Menu",
+  "name": "游戏菜单",
   "single_solution_name": "{key} gossip menu",
   "multi_solution_name": "Multiple gossip menus",
   "description": "This table is used for displaying gossip when a player talks to an NPC",

@@ -17,7 +17,7 @@
              x:Class="WoWDatabaseEditorCore.Avalonia.Views.QuickStartView">
     <UserControl.Resources>
         <converters:BoolToDoubleConverter x:Key="OpacityConverter" WhenTrue="1" WhenFalse="0.3" />
-        <converters:BoolToStringConverter x:Key="TipConverter" WhenTrue="{x:Null}" WhenFalse="Setup 'Core version' in the settings in order enable this item." />
+        <converters:BoolToStringConverter x:Key="TipConverter" WhenTrue="{x:Null}" WhenFalse="在设置中设置“核心版本”以启用此项。" />
         <converters:InverseBoolConverter x:Key="InversedBoolConverter" />
     </UserControl.Resources>
     <UserControl.Styles>
@@ -109,14 +109,14 @@
             <InfoBar
                 Margin="0,10,0,0"
                 IsOpen="{CompiledBinding ShowAvalonia11Box, Mode=TwoWay}"
-                Title="The editor uses new UI framework version"
-                Message="The editor has been updated to use a new version of the UI framework (Avalonia 11). This release had many game breaking changes. In case you see some new UI bugs, please report them on GitHub."
+                Title="编辑器采用新版UI框架"
+                Message="编辑器已更新，使用新版本的 UI 框架 (Avalonia 11)。此版本有许多重大变化。如果您发现一些新的 UI 错误，请在 GitHub 上报告。"
                 Severity="Informational" />
 
             <Border Classes="infoBox" Margin="0,10, 0,0" IsVisible="{CompiledBinding ShowGiveStarBox}">
                 <StackPanel Orientation="Vertical" TextElement.FontSize="13">
-                    <TextBlock FontWeight="Bold" TextWrapping="WrapWithOverflow">It looks like you are using Wow Database Editor for quite some time already.</TextBlock>
-                    <TextBlock TextWrapping="WrapWithOverflow">How about you leave a star on github for this project? It costs you nothing, but gives authors of this app power for further development 💪! To leave a star, you need an account on github, the 'star' button can be found in the top right corner.</TextBlock>
+                    <TextBlock FontWeight="Bold" TextWrapping="WrapWithOverflow">看起来您已经使用 Wow 数据库编辑器相当长一段时间了。</TextBlock>
+                    <TextBlock TextWrapping="WrapWithOverflow">您想在 github 上为这个项目留下一颗星吗？这不需要您花费任何费用，但却能为该应用的作者提供进一步开发的能力 💪！要留下一颗星，您需要一个 github 帐户，“星”按钮位于右上角。</TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <Button Command="{CompiledBinding OpenGithubAndDismissCommand}" Margin="0,0,5,0">Sure 👍! (this will open github website)</Button>
                         <Button Command="{CompiledBinding DismissCommand}">Nah, I don't wanna 🖕</Button>
@@ -150,7 +150,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Margin="30,0,0,0">
-                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10">Quick load</TextBlock>
+                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10">快速加载</TextBlock>
                     <ItemsControl x:Name="IconsControl" Margin="20,0,0,0" ItemsSource="{CompiledBinding FlatItemPrototypes, Mode=OneTime}">
                         <ItemsControl.Styles>
                             <Style Selector="ItemsControl > ContentPresenter">
@@ -180,7 +180,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                     
-                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10" IsVisible="{CompiledBinding HasWizards}">Quick wizards</TextBlock>
+                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10" IsVisible="{CompiledBinding HasWizards}">快速向导</TextBlock>
                     <ItemsControl Margin="20,0,0,0" ItemsSource="{CompiledBinding Wizards, Mode=OneTime}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -199,7 +199,7 @@
                 </StackPanel>
                 
                 <StackPanel Grid.Column="1" Margin="30,0,0,0">
-                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10">Recent</TextBlock>
+                    <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,10">最近打开的</TextBlock>
                     
                     <ItemsControl Margin="20,0,0,0" ItemsSource="{CompiledBinding MostRecentlyUsedItems}">
                         <ItemsControl.ItemsPanel>
@@ -224,9 +224,9 @@
                     </ItemsControl>
                     
                     <StackPanel DataContext="{CompiledBinding AboutViewModel}" Margin="10,0,0,0" IsVisible="{CompiledBinding AllConfigured, Converter={StaticResource InversedBoolConverter}}">
-                        <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,0">Settings overview</TextBlock>
-                        <TextBlock Margin="0,10,0,0" TextWrapping="WrapWithOverflow">In order to enable all features, you have to configure the editor first.</TextBlock>
-                        <TextBlock Margin="0,10,0,0" TextWrapping="WrapWithOverflow" IsVisible="{CompiledBinding AllConfigured}">Congratulations! You have everything configured properly!</TextBlock>
+                        <TextBlock FontSize="24" Opacity="0.75" Margin="0,15,0,0">设置概述</TextBlock>
+                        <TextBlock Margin="0,10,0,0" TextWrapping="WrapWithOverflow">为了启用所有功能，你必须先配置编辑器.</TextBlock>
+                        <TextBlock Margin="0,10,0,0" TextWrapping="WrapWithOverflow" IsVisible="{CompiledBinding AllConfigured}">恭喜！您已正确配置所有配置!</TextBlock>
                         <ItemsControl ItemsSource="{CompiledBinding ConfigurationChecks, Mode=OneTime}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
@@ -240,7 +240,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <Button Margin="0,10,0,0" IsVisible="{CompiledBinding AllConfigured, Converter={StaticResource InversedBoolConverter}}" Command="{Binding OpenSettingsCommand}">Open settings to configure</Button>
+                        <Button Margin="0,10,0,0" IsVisible="{CompiledBinding AllConfigured, Converter={StaticResource InversedBoolConverter}}" Command="{Binding OpenSettingsCommand}">打开设置进行配置</Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>

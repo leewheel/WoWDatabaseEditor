@@ -1,7 +1,7 @@
 ﻿{
   "id": "creature_template",
   "compatibility": ["TrinityWrath"],
-  "name": "Creature Template",
+  "name": "生物模板",
   "description": "Edit existing creature templates",
   "table_name": "creature_template",
   "table_index_name": "entry",
