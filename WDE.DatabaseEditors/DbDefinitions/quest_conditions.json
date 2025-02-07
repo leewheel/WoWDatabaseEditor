@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "TrinityMaster", "Azeroth", "TrinityCata"
   ],
-  "name": "Quest conditions",
+  "name": "任务条件",
   "single_solution_name": "{name} quest conditions",
   "multi_solution_name": "Multiple quests conditions",
   "description": "Use to define custom conditions when quests can be taken",

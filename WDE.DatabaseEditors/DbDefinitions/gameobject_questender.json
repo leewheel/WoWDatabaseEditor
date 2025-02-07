@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "Azeroth", "TrinityMaster", "TrinityCata"
   ],
-  "name": "Game object Quest Ender",
+  "name": "任务结束游戏对象",
   "single_solution_name": "Game object {name} quest ender",
   "multi_solution_name": "Multiple game objects quest ender",
   "description": "Holds GO quest giver relations on which gameobjects end which quests.",

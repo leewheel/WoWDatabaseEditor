@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "Azeroth", "TrinityMaster", "TrinityCata"
   ],
-  "name": "Creature Quest Starter",
+  "name": "任务开始生物",
   "single_solution_name": "Creature {name} quest starter",
   "multi_solution_name": "Multiple creature quest starter",
   "description": "Holds NPC quest giver relations on which NPCs start which quests.",

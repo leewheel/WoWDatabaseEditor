@@ -34,7 +34,7 @@ namespace WoWDatabaseEditorCore.Providers
         private readonly Lazy<IMessageBoxService> messageBoxService;
         public IDocumentManager DocumentManager { get; }
         
-        public string ItemName { get; } = "_File";
+        public string ItemName { get; } = "_文件";
         public List<IMenuItem> SubItems { get; }
         public MainMenuItemSortPriority SortPriority { get; } = MainMenuItemSortPriority.PriorityVeryHigh;
 
@@ -50,15 +50,15 @@ namespace WoWDatabaseEditorCore.Providers
             SubItems = new List<IMenuItem>();
             if (solutionManager.CanContainAnyItem)
             {
-                SubItems.Add(new ModuleMenuItem("_Add item to project", new AsyncAutoCommand(AddNewItemWindow), new("Control+N")));
-                SubItems.Add(new ModuleMenuItem("_New / Open (without project)", new AsyncAutoCommand(OpenNewItemWindow), new("Control+O")));
+                SubItems.Add(new ModuleMenuItem("_将物品添加到项目", new AsyncAutoCommand(AddNewItemWindow), new("Control+N")));
+                SubItems.Add(new ModuleMenuItem("_新建/打开（无项目）", new AsyncAutoCommand(OpenNewItemWindow), new("Control+O")));
             }
             else
             {
-                SubItems.Add(new ModuleMenuItem("_New / Open", new AsyncAutoCommand(OpenNewItemWindow), new("Control+O")));
+                SubItems.Add(new ModuleMenuItem("_新建/打开", new AsyncAutoCommand(OpenNewItemWindow), new("Control+O")));
             }
             
-            SubItems.Add(new ModuleMenuItem("_Save to database", 
+            SubItems.Add(new ModuleMenuItem("_保存至数据库", 
                 new DelegateCommand(
                         () =>
                         {
@@ -82,7 +82,7 @@ namespace WoWDatabaseEditorCore.Providers
                     .ObservesProperty(() => DocumentManager.SelectedTool)
                     .ObservesProperty(() => DocumentManager.ActiveDocument!.IsModified), new("Control+S")));
             
-            SubItems.Add(new ModuleMenuItem("_Save all", 
+            SubItems.Add(new ModuleMenuItem("_全部保存", 
                 new DelegateCommand(
                         () =>
                         {
@@ -113,7 +113,7 @@ namespace WoWDatabaseEditorCore.Providers
                         },
                         () => solutionTasksService.CanSaveToDatabase), new("Control+Shift+S")));
 
-            SubItems.Add(new ModuleMenuItem("_Generate query", 
+            SubItems.Add(new ModuleMenuItem("_生成数据库查询", 
                 new DelegateCommand(
                         () => solutionSqlService.OpenDocumentWithSqlFor(DocumentManager.ActiveSolutionItemDocument!.SolutionItem),
                     () => DocumentManager.ActiveSolutionItemDocument != null)
@@ -123,23 +123,23 @@ namespace WoWDatabaseEditorCore.Providers
                     () => solutionTasksService.SaveAndReloadSolutionTask(DocumentManager.ActiveSolutionItemDocument!.SolutionItem),
                     () => DocumentManager.ActiveSolutionItemDocument != null && solutionTasksService.CanSaveAndReloadRemotely)
                 .ObservesProperty(() => DocumentManager.ActiveSolutionItemDocument);
-            SubItems.Add(new ModuleMenuItem("_Save to database and reload server", cmd, new("F5")));
+            SubItems.Add(new ModuleMenuItem("_保存到数据库并重新加载服务器", cmd, new("F5")));
             solutionTasksService.ToObservable(x => x.CanSaveAndReloadRemotely)
                 .SubscribeAction(_ => cmd.RaiseCanExecuteChanged());
             
-            SubItems.Add(new ModuleMenuItem("_Generate query for all opened", 
+            SubItems.Add(new ModuleMenuItem("_生成所有已打开的查询", 
                 new DelegateCommand(
                         () => solutionSqlService.OpenDocumentWithSqlFor(DocumentManager.OpenedDocuments.Select(d => (d as ISolutionItemDocument)?.SolutionItem!).Where(d => d != null).ToArray<ISolutionItem>()))
                     , new("F3")));
 
             SubItems.Add(new ModuleManuSeparatorItem());
-            SubItems.Add(new ModuleMenuItem("_Settings", new DelegateCommand(OpenSettings)));
+            SubItems.Add(new ModuleMenuItem("_设置", new DelegateCommand(OpenSettings)));
             SubItems.Add(new ModuleManuSeparatorItem());
-            SubItems.Add(new ModuleMenuItem("Close current tab", new AsyncAutoCommand(() => 
+            SubItems.Add(new ModuleMenuItem("关闭当前标签", new AsyncAutoCommand(() => 
                 documentManager.ActiveDocument?.CloseCommand?.ExecuteAsync() ?? Task.CompletedTask), new MenuShortcut("Control+W")));
-            SubItems.Add(new ModuleMenuItem("Close all tabs", new AsyncAutoCommand(async () => 
+            SubItems.Add(new ModuleMenuItem("关闭所有标签", new AsyncAutoCommand(async () => 
                 await documentManager.TryCloseAllDocuments(false)), new MenuShortcut("Control+Shift+W")));
-            SubItems.Add(new ModuleMenuItem("_Exit", new DelegateCommand(() => application.TryClose())));
+            SubItems.Add(new ModuleMenuItem("_退出", new DelegateCommand(() => application.TryClose())));
         }
 
         private async Task AddNewItemWindow()
@@ -156,7 +156,7 @@ namespace WoWDatabaseEditorCore.Providers
             }
             catch (Exception e)
             {
-                await messageBoxService.Value.SimpleDialog("Error", "Error while creating new item", e.Message);
+                await messageBoxService.Value.SimpleDialog("错误", "生成新物品时报错", e.Message);
             }
         }
         
@@ -170,7 +170,7 @@ namespace WoWDatabaseEditorCore.Providers
             }
             catch (Exception e)
             {
-                await messageBoxService.Value.SimpleDialog("Error", "Error while creating new item", e.Message);
+                await messageBoxService.Value.SimpleDialog("错误", "生成新物品时报错", e.Message);
             }
         }
         private void OpenSettings() => settings.ShowSettings();

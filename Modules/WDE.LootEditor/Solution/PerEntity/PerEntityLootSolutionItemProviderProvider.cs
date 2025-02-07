@@ -32,13 +32,13 @@ public class PerEntityLootSolutionItemProviderProvider : ISolutionItemProviderPr
             this.type = type;
         }
 
-        public string GetName() => $"{type} loot editor";
+        public string GetName() => $"{type} 战利品编辑器";
 
         public ImageUri GetImage() => new("Icons/document_loot.png");
 
         public string GetDescription() => $"Allows editing loot for {type}.";
 
-        public string GetGroupName() => "Loot";
+        public string GetGroupName() => "战利品";
 
         public bool IsCompatibleWithCore(ICoreVersion core) => core.LootEditingMode == LootEditingMode.PerLogicalEntity;
 

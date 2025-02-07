@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "Azeroth", "TrinityMaster", "TrinityCata"
   ],
-  "name": "Game object Quest Starter",
+  "name": "任务开始游戏对象",
   "single_solution_name": "Game object {name} quest starter",
   "multi_solution_name": "Multiple game objects quest starter",
   "description": "Holds GO quest giver relations on which gameobject start which quests.",

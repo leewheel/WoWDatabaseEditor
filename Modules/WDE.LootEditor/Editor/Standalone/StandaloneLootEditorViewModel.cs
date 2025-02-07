@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AsyncAwaitBestPractices.MVVM;
+using HarfBuzzSharp;
 using Prism.Commands;
 using Prism.Ioc;
 using PropertyChanged.SourceGenerator;
@@ -234,7 +235,7 @@ public partial class StandaloneLootEditorViewModel : ObservableBase, IDialog, IW
         });
         if (IsPerEntityLootEditingMode)
         {
-            Title = "Loot editor";
+            Title = "战利品编辑器";
             LoadLootCommand = new AsyncAutoCommand(async () =>
             {
                 if (!await AskToSave())
@@ -250,7 +251,54 @@ public partial class StandaloneLootEditorViewModel : ObservableBase, IDialog, IW
         }
         else
         {
-            Title = $"{lootType} loot editor";
+            //switch (lootType)
+            //{
+            //    case (LootSourceType)0:
+            //        Title = "生物战利品编辑器";
+            //        break;
+            //    case (LootSourceType)1:
+            //        Title = "游戏对象战利品编辑器";
+            //        break;
+            //    case (LootSourceType)2:
+            //        Title = "物品战利品编辑器";
+            //        break;
+            //    case (LootSourceType)3:
+            //        Title = "邮件战利品编辑器";
+            //        break;
+            //    case (LootSourceType)4:
+            //        Title = "钓鱼战利品编辑器";
+            //        break;
+            //    case (LootSourceType)5:
+            //        Title = "剥皮战利品编辑器";
+            //        break;
+            //    case (LootSourceType)6:
+            //        Title = "宝箱战利品编辑器";
+            //        break;
+            //    case (LootSourceType)7:
+            //        Title = "钓鱼战利品编辑器";
+            //        break;
+            //    case (LootSourceType)8:
+            //        Title = "法术战利品编辑器";
+            //        break;
+            //    case (LootSourceType)9:
+            //        Title = "参考战利品编辑器";
+            //        break;
+            //    case (LootSourceType)10:
+            //        Title = "分解战利品编辑器";
+            //        break;
+            //    case (LootSourceType)11:
+            //        Title = "采矿战利品编辑器";
+            //        break;
+            //    case (LootSourceType)12:
+            //        Title = "勘探战利品编辑器";
+            //        break;
+            //    case (LootSourceType)13:
+            //        Title = "扒窃战利品编辑器";
+            //        break;
+            //}
+
+
+            Title = $"{lootType} 战利品编辑器";
             viewModel = containerProvider.Resolve<LootEditorViewModel>((typeof(PerDatabaseTableLootSolutionItem), solutionItem ?? new PerDatabaseTableLootSolutionItem(lootType)), (typeof(PerEntityLootSolutionItem), null));
             viewModel.BeginLoad().ListenErrors();
             LoadLootCommand = new AsyncAutoCommand(async () =>

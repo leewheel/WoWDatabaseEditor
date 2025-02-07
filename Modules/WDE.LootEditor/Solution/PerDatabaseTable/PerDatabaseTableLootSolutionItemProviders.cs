@@ -54,7 +54,7 @@ public class PerDatabaseTableLootSolutionItemProviders :
 
     public string GetName(PerDatabaseTableLootSolutionItem item)
     {
-        return item.Type + " loot editor";
+        return item.Type + " Õ½ÀûÆ·±à¼­Æ÷";
     }
 
     public ISmartScriptProjectItem? Serialize(PerDatabaseTableLootSolutionItem item, bool forMostRecentlyUsed)

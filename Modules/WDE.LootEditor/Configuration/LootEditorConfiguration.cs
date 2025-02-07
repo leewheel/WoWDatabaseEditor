@@ -33,7 +33,7 @@ public partial class LootEditorConfiguration : ObservableBase, IConfigurable, ID
     [Notify] private bool isModified;
     
     public ICommand Save { get; }
-    public string Name { get; } = "Loot editor";
+    public string Name { get; } = "Õ½ÀûÆ·±à¼­Æ÷";
     public string? ShortDescription => null;
     public bool IsRestartRequired => false;
     public ConfigurableGroup Group => ConfigurableGroup.Basic;

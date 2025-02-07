@@ -3,7 +3,7 @@
   "compatibility": [
     "TrinityWrath", "Azeroth", "TrinityMaster", "TrinityCata"
   ],
-  "name": "Creature Quest Ender",
+  "name": "任务结束生物",
   "single_solution_name": "Creature {name} quest ender",
   "multi_solution_name": "Multiple creature quest ender",
   "description": "Holds NPC quest giver relations on which NPCs end which quests.",

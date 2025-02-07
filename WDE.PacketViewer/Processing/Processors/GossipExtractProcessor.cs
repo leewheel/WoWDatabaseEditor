@@ -349,7 +349,7 @@ namespace WDE.PacketViewer.Processing.Processors
             if (gossiperToFirstMenuId.Count > 0)
             {
                 multiQuery.Comment("");
-                multiQuery.Comment(" [ Creature templates ] ");
+                multiQuery.Comment(" [ ÉúÎïÄ£°å ] ");
                 multiQuery.Comment("");   
             }
 

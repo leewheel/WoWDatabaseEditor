@@ -3,7 +3,7 @@
     "Azeroth",
     "TrinityWrath"
   ],
-  "name": "Item Template",
+  "name": "物品模板",
   "single_solution_name": "{name} Item Template",
   "multi_solution_name": "Multiple Item Template",
   "description": "Edit existing item templates",

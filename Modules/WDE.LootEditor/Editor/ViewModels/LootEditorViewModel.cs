@@ -534,7 +534,7 @@ public partial class LootEditorViewModel : ObservableBase, ISolutionItemDocument
         if (perEntitySolutionItem != null)
             Title = $"{solutionItemNameRegistry.GetName(perEntitySolutionItem)} ({perEntitySolutionItem.Entry})";
         else
-            Title = $"{LootSourceType} loot editor";
+            Title = $"{LootSourceType} 战利品编辑器";
         IsInitialLoading = true;
     }
 
@@ -542,7 +542,7 @@ public partial class LootEditorViewModel : ObservableBase, ISolutionItemDocument
     {
         if (sessionService.IsOpened && !sessionService.IsPaused)
         {
-            await messageBoxService.SimpleDialog("Warning", "No session support", "The loot editor doesn't support sessions, but you have a session opened. This means when you save this window, it won't get saved to the current session.\n\nThis is because I didn't know people use this feature with sessions enabled.\n\nPlease let me know that you use both the loot editor and sessions and I'll do my best to add support for sessions.\n\n\n(but this will be saved to your database anyway)");
+            await messageBoxService.SimpleDialog("警告", "不支持的会话", "战利品编辑器不支持会话，但您已打开会话。这意味着当您保存此窗口时，它不会保存到当前会话。\n\n这是因为我不知道人们在启用会话的情况下使用此功能。\n\n请让我知道您同时使用战利品编辑器和会话，我会尽力添加对会话的支持。\n\n\n（但这无论如何都会保存到您的数据库中)");
         }
     }
 

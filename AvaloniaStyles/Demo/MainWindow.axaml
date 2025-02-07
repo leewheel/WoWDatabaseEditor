@@ -12,18 +12,18 @@
                 Title="Demo">
     <NativeMenu.Menu>
         <NativeMenu>
-            <NativeMenuItem Header="File">
+            <NativeMenuItem Header="文件">
                 <NativeMenu>
-                    <NativeMenuItem Header="New" />
-                    <NativeMenuItem Header="Open" />
-                    <NativeMenuItem Header="Save" />
+                    <NativeMenuItem Header="新建" />
+                    <NativeMenuItem Header="打开" />
+                    <NativeMenuItem Header="保存" />
                 </NativeMenu>
             </NativeMenuItem>
-            <NativeMenuItem Header="Edit">
+            <NativeMenuItem Header="编辑">
                 <NativeMenu>
-                    <NativeMenuItem Header="Copy" />
-                    <NativeMenuItem Header="Paste" />
-                    <NativeMenuItem Header="Cut" />
+                    <NativeMenuItem Header="复制" />
+                    <NativeMenuItem Header="粘贴" />
+                    <NativeMenuItem Header="剪切" />
                 </NativeMenu>
             </NativeMenuItem>
         </NativeMenu>

@@ -243,8 +243,8 @@ namespace WDE.TrinitySmartScriptEditor
         public SmartScriptClientAreaTriggerEntityListProvider(
             Lazy<IItemFromListProvider> itemFromListProvider,
             Lazy<IDbcStore> dbcStore
-        ) : base("Client Area Trigger",
-            "The script from AreaTrigger from client database (DBC)",
+        ) : base("客户端区触发器",
+            "来自客户端数据库（DBC）的 AreaTrigger 脚本",
             "document_areatrigger_big",
             SmartScriptType.AreaTrigger)
         {
@@ -308,8 +308,8 @@ namespace WDE.TrinitySmartScriptEditor
         ) : base(
             itemFromListProvider,
             database,
-            "Area Trigger Entity",
-            "The script from AreaTrigger defined in areatrigger_template",
+            "区域触发实体",
+            "AreaTrigger 中的脚本在 areatrigger_template 中定义",
             "document_areatrigger_big",
             SmartScriptType.AreaTriggerEntity,
             false) {}
@@ -324,8 +324,8 @@ namespace WDE.TrinitySmartScriptEditor
         ) : base(
             itemFromListProvider,
             database,
-            "Area Trigger Server-side Entity",
-            "The script from server side AreaTrigger defined in areatrigger_template",
+            "区域触发器服务器端实体",
+            "服务器端 AreaTrigger 的脚本在表 areatrigger_template 中定义",
             "document_areatrigger_big",
             SmartScriptType.AreaTriggerEntityServerSide,
             true) {}
@@ -342,8 +342,8 @@ namespace WDE.TrinitySmartScriptEditor
             Lazy<IItemFromListProvider> itemFromListProvider,
             Lazy<IDbcStore> dbcStore,
             Lazy<IDatabaseProvider> databaseProvider
-        ) : base("Scene Script",
-            "The script from Scene from client database (DBC)",
+        ) : base("场景脚本",
+            "来自客户端数据库（DBC）场景的脚本",
             "document_cinematic_big",
             SmartScriptType.Scene)
         {
