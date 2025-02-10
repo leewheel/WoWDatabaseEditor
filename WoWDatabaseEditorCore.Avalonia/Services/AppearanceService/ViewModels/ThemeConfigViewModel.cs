@@ -123,8 +123,8 @@ namespace WoWDatabaseEditorCore.Avalonia.Services.AppearanceService.ViewModels
         }
 
         public ICommand Save { get; }
-        public string Name => "Appearance";
-        public string ShortDescription => "Wow Database Editor is supplied with few looks, check them out!";
+        public string Name => "外观";
+        public string ShortDescription => "Wow 数据库编辑器提供了一些外观，请选择!";
         public bool IsRestartRequired => true;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;
 

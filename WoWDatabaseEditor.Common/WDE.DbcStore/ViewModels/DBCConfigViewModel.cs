@@ -88,7 +88,7 @@ namespace WDE.DbcStore.ViewModels
         }
 
         private bool isModified;
-        public string ShortDescription => "To get all editor features, you need to use DBC (client database) files. This should be the path to extracted DBC files, the same the server uses.";
+        public string ShortDescription => "要获得所有编辑器功能，您需要使用 DBC（客户端数据库）文件。这应该是提取 DBC 文件的路径，与服务器使用的路径相同。";
         
         public bool IsModified
         {

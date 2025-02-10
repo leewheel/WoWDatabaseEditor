@@ -37,7 +37,7 @@ public class GeneralSettingsViewModel : ObservableBase, IGeneralSettings
     public IList<GeneralSettingsGroupViewModel> Groups { get; }
 
     public ICommand Save { get; }
-    public string Name => "General settings";
+    public string Name => "³£¹æÉèÖÃ";
     public string? ShortDescription => null;
     public bool IsModified => Groups.Any(x => x.IsModified);
     public bool IsRestartRequired => false;

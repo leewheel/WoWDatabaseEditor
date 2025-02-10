@@ -40,10 +40,10 @@ namespace WDE.MPQ.ViewModels
                     if (verifier.VerifyFolder(folder) == WoWFilesType.Invalid)
                     {
                         await messageBoxService.ShowDialog(new MessageBoxFactory<bool>()
-                            .SetTitle("WoW Client Data")
+                            .SetTitle("WoW客户端数据")
                             .SetMainInstruction("Invalid WoW folder")
                             .SetContent(
-                                "This doesn't look like a correct WoW folder.\n\nSelect main game folder (wow.exe file must be there).\n\nOther WoW versions are not supported now.")
+                                "这看起来不像是一个正确的 WoW 文件夹。\n\n选择主游戏文件夹（wow.exe 文件必须存在）。\n\n现在不支持其他 WoW 版本。")
                             .WithOkButton(true)
                             .Build());
                     }
@@ -80,9 +80,9 @@ namespace WDE.MPQ.ViewModels
         }
 
         public ICommand Save { get; set; }
-        public string Name => "Client data files";
+        public string Name => "客户端数据文件";
         public string ShortDescription =>
-            "The editor can open 3.3.5, 4.3.4, 5.4.8 and 7.3.5 files for extended features.";
+            "该编辑器可以打开 3.3.5、4.3.4、5.4.8 和 7.3.5 文件以实现扩展功能。";
         public bool IsModified { get; set; }
         public bool IsRestartRequired => true;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;

@@ -51,8 +51,8 @@ namespace WoWDatabaseEditorCore.CoreVersion.ViewModels
         
         public ICommand Save { get; }
         public string ShortDescription =>
-            "Choose which core version will you be working with. Particular modules (like SmartScripts module) can respect that.";
-        public string Name => "Core version";
+            "选择您要使用的核心版本。特定模块（如 SmartScripts 模块）可以遵循该版本。";
+        public string Name => "核心板本";
         public bool IsRestartRequired => true;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;
     }

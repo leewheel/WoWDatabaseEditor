@@ -8,7 +8,7 @@ namespace WDE.SmartScriptEditor.Settings;
 public class SettingsProvider : IGeneralSettingsGroup
 {
     private readonly IGeneralSmartScriptSettingsProvider smartSettingsProvider;
-    public string Name => "General Smart scripts";
+    public string Name => "常规智能脚本";
     public IReadOnlyList<IGenericSetting> Settings { get; }
     
     private ListOptionGenericSetting viewType;
@@ -33,34 +33,34 @@ public class SettingsProvider : IGeneralSettingsGroup
     {
         this.smartSettingsProvider = smartSettingsProvider;
 
-        viewType = new ListOptionGenericSetting("Script view type",
+        viewType = new ListOptionGenericSetting("脚本视图类型",
             new object[]
             {
                 SmartScriptViewType.Normal, SmartScriptViewType.Compact
             },
-            smartSettingsProvider.ViewType, "Compact mode takes less space, but to add an action you have to use the context menu instead of having a button.");
+            smartSettingsProvider.ViewType, "紧凑模式占用较少的空间，但要添加操作，您必须使用上下文菜单而不是按钮。");
 
-        addingBehaviour = new ListOptionGenericSetting("Add behaviour",
+        addingBehaviour = new ListOptionGenericSetting("添加行为",
             new object[]
             {
                 AddingElementBehaviour.Wizard, AddingElementBehaviour.DirectlyOpenDialog, AddingElementBehaviour.JustAdd
             },
-            smartSettingsProvider.AddingBehaviour, "Controls the way how new actions are added. The wizard shows three dialogs with all possible actions, sources and types, the 'directly open dialog' adds a default action and instantly opens the action edit dialog. 'Just add' only adds an action.");
+            smartSettingsProvider.AddingBehaviour, "控制添加新操作的方式。向导显示三个对话框，其中包含所有可能的操作、来源和类型，“直接打开对话框”会添加默认操作并立即打开操作编辑对话框。“仅添加”只会添加一个操作。");
 
-        actionEditViewOrder = new ListOptionGenericSetting("Action edit view order",
+        actionEditViewOrder = new ListOptionGenericSetting("操作编辑查看顺序",
             new object[]
             {
                 ActionEditViewOrder.SourceActionTarget, ActionEditViewOrder.ActionSourceTarget
             },
-            smartSettingsProvider.ActionEditViewOrder, "Decide how the order in the action edit dialog and the order of selecting elements in wizard add behaviour mode.");
+            smartSettingsProvider.ActionEditViewOrder, "决定动作编辑对话框中的顺序以及向导添加行为模式中选择元素的顺序。");
 
-        insertActionOnEventInsert = new BoolGenericSetting("Insert a new action on event insert",
-            smartSettingsProvider.InsertActionOnEventInsert, "When enabled, a new action will be inserted when you insert a new event.");
+        insertActionOnEventInsert = new BoolGenericSetting("在事件插入时插入新动作",
+            smartSettingsProvider.InsertActionOnEventInsert, "启用后，插入新事件时将插入新动作。");
         
-        automaticallyApplyNonRepeatableFlag = new BoolGenericSetting("Automatically apply non-repeatable flag",
-            smartSettingsProvider.AutomaticallyApplyNonRepeatableFlag, "When enabled, non-repeatable flag will be automatically applied and removed from events depending on their timers.");
+        automaticallyApplyNonRepeatableFlag = new BoolGenericSetting("自动应用不可重复标志",
+            smartSettingsProvider.AutomaticallyApplyNonRepeatableFlag, "启用后，不可重复标志将根据事件的计时器自动应用并从事件中删除。");
         
-        defaultScale = new FloatSliderGenericSetting("Default scaling",
+        defaultScale = new FloatSliderGenericSetting("默认缩放比例",
             smartSettingsProvider.DefaultScale,
             0.5f,
             1f);

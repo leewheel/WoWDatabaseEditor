@@ -10,7 +10,7 @@ namespace WoWDatabaseEditorCore.Services.OutlinerTool;
 public class OutlinerGeneralSettings : IGeneralSettingsGroup
 {
     private readonly IOutlinerSettingsService settingsService;
-    public string Name => "Outliner";
+    public string Name => "大纲视图";
     public IReadOnlyList<IGenericSetting> Settings { get; set; }
     private List<BoolGenericSetting> settings;
     private List<int> values = new();
@@ -24,7 +24,7 @@ public class OutlinerGeneralSettings : IGeneralSettingsGroup
         {
             if (val != FindAnywhereSourceType.None && val != FindAnywhereSourceType.All)
             {
-                string? help = val == FindAnywhereSourceType.SmartScripts ? "You can choose what elements do you want to look for in the outliner tool." : null;
+                string? help = val == FindAnywhereSourceType.SmartScripts ? "您可以选择要在大纲工具中查找的元素。" : null;
                 settings.Add(new BoolGenericSetting(val.ToString(), (includeSources & val) != 0, help));
                 values.Add((int)val);
             }

@@ -11,7 +11,7 @@
              x:DataType="viewModels:CoreVersionConfigViewModel"
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Margin="0,1,0,0" Grid.IsSharedSizeScope="True">
-        <SettingItem Header="Core version" Help="Depending on the core version, particular features will be enabled/disabled.">
+        <SettingItem Header="核心板本" Help="根据核心版本，特定功能将被启用/禁用.">
             <ComboBox ItemsSource="{CompiledBinding CoreVersions}" 
                       SelectedItem="{CompiledBinding SelectedVersion, Mode=TwoWay}">
                 <ComboBox.ItemTemplate>

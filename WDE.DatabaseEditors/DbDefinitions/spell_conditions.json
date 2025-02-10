@@ -1,52 +1,55 @@
 {
-  "id": "spell_conditions",
-  "compatibility": [
-    "TrinityWrath", "TrinityMaster", "Azeroth", "TrinityCata"
-  ],
-  "name": "Spell conditions",
-  "single_solution_name": "{name} spell conditions",
-  "multi_solution_name": "Multiple spells conditions",
-  "description": "Use to define when the spells can be casted",
-  "table_name": "spell_condition",
-  "table_index_name": "spell_id",
-  "record_mode": "MultiRecord",
-  "icon_path": "Icons/document_spell_conditions.png",
-  "group_name": "Common scripting tables",
-  "picker": "SpellParameter",
-  "only_conditions": "IgnoreTableCompletely",
-  "primary_key": [
-    "spell_id"
-  ],
-  "conditions": {
-    "source_type": 17,
-    "source_entry": "spell_id",
-    "targets": [
-      {
-        "id": 0,
-        "name": "spell caster"
-      },
-      {
-        "id": 1,
-        "name": "explicit target of the spell"
-      }
-    ]
-  },
-  "groups": [
-    {
-      "group_name": "group",
-      "fields": [
+    "id": "spell_conditions",
+    "compatibility": [
+        "TrinityWrath",
+        "TrinityMaster",
+        "Azeroth",
+        "TrinityCata"
+    ],
+    "name": "法术条件",
+    "single_solution_name": "{name} 法术条件",
+    "multi_solution_name": "Multiple spells conditions",
+    "description": "用于定义何时可以施放法术",
+    "table_name": "spell_condition",
+    "table_index_name": "spell_id",
+    "record_mode": "MultiRecord",
+    "icon_path": "Icons/document_spell_conditions.png",
+    "group_name": "Common scripting tables",
+    "picker": "SpellParameter",
+    "only_conditions": "IgnoreTableCompletely",
+    "primary_key": [
+        "spell_id"
+    ],
+    "conditions": {
+        "source_type": 17,
+        "source_entry": "spell_id",
+        "targets": [
+            {
+                "id": 0,
+                "name": "spell caster"
+            },
+            {
+                "id": 1,
+                "name": "explicit target of the spell"
+            }
+        ]
+    },
+    "groups": [
         {
-          "name": "Spell Id",
-          "db_column_name": "spell_id",
-          "value_type": "SpellParameter",
-          "read_only": true
-        },
-        {
-          "is_condition": true,
-          "name": "Conditions",
-          "db_column_name": "conditions"
+            "group_name": "group",
+            "fields": [
+                {
+                    "name": "Spell Id",
+                    "db_column_name": "spell_id",
+                    "value_type": "SpellParameter",
+                    "read_only": true
+                },
+                {
+                    "is_condition": true,
+                    "name": "Conditions",
+                    "db_column_name": "conditions"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

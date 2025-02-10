@@ -32,7 +32,7 @@
             <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Profile name:</TextBlock>
             <TextBox Text="{CompiledBinding ProfileName}" Grid.Row="0" Grid.Column="2"/>
             
-            <TextBlock IsVisible="{CompiledBinding NoCreate, Converter={x:Static BoolConverters.Not}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Core version:</TextBlock>
+            <TextBlock IsVisible="{CompiledBinding NoCreate, Converter={x:Static BoolConverters.Not}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">核心板本:</TextBlock>
             <ComboBox ItemsSource="{CompiledBinding CoreVersions}" 
                       IsVisible="{CompiledBinding NoCreate, Converter={x:Static BoolConverters.Not}}"
                       HorizontalAlignment="Stretch"
@@ -57,9 +57,9 @@
                 <Slider Value="{CompiledBinding Hue}" Minimum="0" Maximum="1" />
             </DockPanel>
             <TextBlock IsVisible="{CompiledBinding NoCreate, Converter={x:Static BoolConverters.Not}}"
-                       Opacity="0.5" Grid.Row="5" Grid.Column="2">(different accent colors can help you distinguish the editor windows)</TextBlock>
+                       Opacity="0.5" Grid.Row="5" Grid.Column="2">(不同的强调色可以帮助您区分编辑器窗口)</TextBlock>
             
-            <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">Make default:</TextBlock>
+            <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">恢复默认:</TextBlock>
             <CheckBox Grid.Row="7" Grid.Column="2" IsChecked="{CompiledBinding MakeDefault}" />
         </Grid>
     </DockPanel>

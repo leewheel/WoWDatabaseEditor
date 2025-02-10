@@ -15,9 +15,9 @@ namespace WDE.Sessions.Sessions
         private bool? deleteOnSave;
         private bool isModified;
         public ICommand Save { get; }
-        public string Name => "Sessions";
+        public string Name => "会话";
         public string? ShortDescription =>
-            "Sessions allow you to easily generate SQL with changes you made since the last time you begun a session";
+            "会话允许您轻松生成 SQL，其中包含自上次开始会话以来所做的更改";
         public bool IsRestartRequired => false;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;
 

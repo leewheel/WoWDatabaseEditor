@@ -13,7 +13,7 @@ namespace WDE.TrinityMySqlDatabase.ViewModels
         {
         }
 
-        public override string Name => "TrinityCore Database";
-        public override string ShortDescription => "To get all editor features, you have to connect to any Trinity compatible database.";
+        public override string Name => "核心数据库";
+        public override string ShortDescription => "要获得所有编辑器功能，您必须连接到任何与本编辑器兼容的数据库。";
     }
 }

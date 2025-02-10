@@ -81,9 +81,9 @@ namespace WoWDatabaseEditorCore.Services.ConfigurationService.ViewModels
 
             if (restartRequired)
             {
-                messageBoxService.ShowDialog(new MessageBoxFactory<bool>().SetTitle("Settings updated")
-                    .SetMainInstruction("Restart is required")
-                    .SetContent("To apply new settings, you have to restart the application")
+                messageBoxService.ShowDialog(new MessageBoxFactory<bool>().SetTitle("设置已更新")
+                    .SetMainInstruction("需要重新启动")
+                    .SetContent("要应用新设置，您必须重新启动应用程序")
                     .SetIcon(MessageBoxIcon.Information)
                     .WithOkButton(true)
                     .Build());
@@ -100,7 +100,7 @@ namespace WoWDatabaseEditorCore.Services.ConfigurationService.ViewModels
         }
 
         public ImageUri? Icon => new ImageUri("Icons/settings.png");
-        public string Title => "Settings";
+        public string Title => "设定";
         public IAsyncCommand Save { get; }
         public ICommand Undo => AlwaysDisabledCommand.Command;
         public ICommand Redo => AlwaysDisabledCommand.Command;

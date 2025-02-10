@@ -9,16 +9,16 @@
              prism:ViewModelLocator.AutoWireViewModel="False">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True">
         <StackPanel>
-            <controls:SettingsHeader Text="Themes" />
+            <controls:SettingsHeader Text="主题" />
             <StackPanel>
-                <SettingItem Header="Current theme">
+                <SettingItem Header="当前主题">
                     <TextBlock FontWeight="Bold" Text="{CompiledBinding CurrentThemeName}" />
                 </SettingItem>
-                <SettingItem Header="Theme">
+                <SettingItem Header="主题">
                     <ComboBox Margin="30,0,0,0" VerticalAlignment="Top" ItemsSource="{CompiledBinding Themes}"
                               SelectedItem="{CompiledBinding ThemeName, Mode=TwoWay}" />
                 </SettingItem>
-                <SettingItem Header="Accent color" Help="Info: Custom accent color is available only in Windows 11 Theme.">
+                <SettingItem Header="主色调" Help="信息：自定义主色调仅在 Windows 11 主题中可用。">
                     <DockPanel>
                         <Slider DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Stretch" Value="{CompiledBinding Lightness}" Name="Lightness" Minimum="0" Maximum="1" />
                         <WdeColorPicker Lightness="{CompiledBinding Lightness}" SelectedColor="{CompiledBinding Color, Mode=TwoWay}" Width="200" Height="120" />
@@ -26,12 +26,12 @@
                 </SettingItem>
             </StackPanel>
             
-            <controls:SettingsHeader Text="Scaling" />
+            <controls:SettingsHeader Text="缩放" />
             <StackPanel>
-                <SettingItem Header="Recommended scaling">
+                <SettingItem Header="推荐缩放值">
                     <TextBlock VerticalAlignment="Center"  Text="{CompiledBinding RecommendedScalingPercentage, StringFormat={}{0}%}" FontWeight="Bold" />
                 </SettingItem>
-                <SettingItem Header="Custom scaling" Help="Info: Custom scaling is available only on Windows">
+                <SettingItem Header="自定义缩放" Help="信息：自定义缩放仅适用于 Windows">
                     <DockPanel IsEnabled="{CompiledBinding AllowCustomScaling}">
                         <ToggleSwitch Margin="10,0,0,0" IsChecked="{CompiledBinding UseCustomScaling}" DockPanel.Dock="Right" />
                         <TextBlock DockPanel.Dock="Left" Width="90" VerticalAlignment="Center" Text="{CompiledBinding ScalingValuePercentage, StringFormat={}{0}%}"></TextBlock>

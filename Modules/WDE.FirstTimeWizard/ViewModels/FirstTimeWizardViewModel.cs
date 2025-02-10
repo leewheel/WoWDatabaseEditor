@@ -47,10 +47,10 @@ public partial class FirstTimeWizardViewModel : ObservableBase, IDialog
             }
 
             await messageBoxService.ShowDialog(new MessageBoxFactory<bool>()
-                .SetTitle("Restart required")
-                .SetMainInstruction("Restart is required")
+                .SetTitle("需要重新启动")
+                .SetMainInstruction("需要重新启动")
                 .SetContent(
-                    "In order to save the settings, you have to restart the editor.")
+                    "为了保存设置，您必须重新启动编辑器。")
                 .WithOkButton(true)
                 .Build());
 
@@ -63,10 +63,10 @@ public partial class FirstTimeWizardViewModel : ObservableBase, IDialog
             settings.State = FirstTimeWizardState.Canceled;
             
             await messageBoxService.ShowDialog(new MessageBoxFactory<bool>()
-                .SetTitle("First time wizard")
-                .SetMainInstruction("Setup canceled")
+                .SetTitle("首次向导")
+                .SetMainInstruction("取消设置")
                 .SetContent(
-                    "You have canceled the first time wizard, but don't worry, you can change the settings later in the File -> Settings menu.")
+                    "您已取消首次向导，但不用担心，您可以稍后在文件 -> 设置菜单中更改设置。")
                 .WithOkButton(true)
                 .Build());
             
@@ -83,7 +83,7 @@ public partial class FirstTimeWizardViewModel : ObservableBase, IDialog
     
     public int DesiredWidth => 800;
     public int DesiredHeight => 600;
-    public string Title => "First time wizard";
+    public string Title => "首次向导";
     public bool Resizeable => true;
     public ICommand Accept { get; }
     public ICommand Cancel { get; }
