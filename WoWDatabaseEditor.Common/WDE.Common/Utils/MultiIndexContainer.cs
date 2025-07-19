@@ -229,8 +229,9 @@ public class MultiIndexContainer : IMultiIndexContainer
 
     public IEnumerable<int> All()
     {
-        foreach (var range in ranges)
+        for (int index = 0; index < ranges.Count; index++)
         {
+            var range = ranges[index];
             if (range.start == range.end)
                 yield return range.start;
             else
