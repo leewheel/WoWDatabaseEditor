@@ -1,0 +1,73 @@
+{
+  "id": "vehicle_template_accessory",
+  "compatibility": [
+    "TrinityMaster"
+  ],
+  "name": "Vehicle Template Accessory",
+  "single_solution_name": "{name}'s vehicle accessories",
+  "multi_solution_name": "Multiple vehicles accessories",
+  "description": "Use this table to define creatures that will spawn automatically on a vehicle",
+  "table_name": "vehicle_template_accessory",
+  "table_index_name": "entry",
+  "record_mode": "MultiRecord",
+  "reload_command": "reload vehicle_template_accessory",
+  "group_name": "Vehicles",
+  "icon_path": "Icons/document_vehicle_template.png",
+  "picker": "CreatureParameter",
+  "primary_key": [
+    "entry",
+    "seat_id"
+  ],
+  "groups": [
+    {
+      "group_name": "group",
+      "fields": [
+        {
+          "name": "Entry",
+          "db_column_name": "entry",
+          "value_type": "CreatureParameter",
+          "read_only": true
+        },
+        {
+          "name": "Accessory",
+          "db_column_name": "accessory_entry",
+          "value_type": "CreatureParameter"
+        },
+        {
+          "name": "Seat Id",
+          "db_column_name": "seat_id",
+          "value_type": "int"
+        },
+        {
+          "name": "Die when vehicle dies?",
+          "db_column_name": "minion",
+          "value_type": "BoolParameter"
+        },
+        {
+          "name": "Summon Type",
+          "db_column_name": "summontype",
+          "value_type": "SummonTypeParameter",
+          "default": 6
+        },
+        {
+          "name": "Summon timer (ms)",
+          "db_column_name": "summontimer",
+          "value_type": "uint",
+          "default": 30000
+        },
+        {
+          "name": "Ride Spell",
+          "db_column_name": "RideSpellID",
+          "value_type": "SpellParameter",
+          "can_be_null": true
+        },
+        {
+          "name": "Comment",
+          "db_column_name": "description",
+          "value_type": "string",
+          "autogenerate_comment": "thisString.entry + ' seat ' + str(this.seat_id) + ': ' + thisString.accessory_entry"
+        }
+      ]
+    }
+  ]
+}

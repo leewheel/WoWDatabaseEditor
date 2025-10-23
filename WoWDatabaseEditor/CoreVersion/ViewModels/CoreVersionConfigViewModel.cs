@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Prism.Commands;
 using WDE.Common;
 using WDE.Common.CoreVersion;
+using WDE.Common.Types;
 using WDE.Module.Attributes;
 using WDE.MVVM;
 
@@ -50,6 +51,7 @@ namespace WoWDatabaseEditorCore.CoreVersion.ViewModels
         }
         
         public ICommand Save { get; }
+        public ImageUri Icon { get; } = new ImageUri("Icons/document_core_big.png");
         public string ShortDescription =>
             "选择您要使用的核心版本。特定模块（如 SmartScripts 模块）可以遵循该版本。";
         public string Name => "核心板本";

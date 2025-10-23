@@ -6,10 +6,12 @@ using System.Runtime.InteropServices;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Media;
+using Avalonia.Styling;
 using Avalonia.Threading;
 using AvaloniaStyles;
 using AvaloniaStyles.Controls;
 using AvaloniaStyles.Utils;
+using Classic.Avalonia.Theme;
 using Prism.Commands;
 using Prism.Mvvm;
 using PropertyChanged.SourceGenerator;
@@ -17,6 +19,7 @@ using SixLabors.ImageSharp.ColorSpaces;
 using WDE.Common;
 using WDE.Common.Managers;
 using WDE.Common.Tasks;
+using WDE.Common.Types;
 using WDE.Module.Attributes;
 using WDE.MVVM;
 using WDE.MVVM.Observable;
@@ -35,8 +38,11 @@ namespace WoWDatabaseEditorCore.Avalonia.Services.AppearanceService.ViewModels
 
         private ThemeSettings currentSettings;
 
+        public bool IsAprilsFool { get; }
+
         public ThemeConfigViewModel(IThemeSettingsProvider settings, IThemeManager themeManager, IMainWindowHolder mainWindowHolder)
         {
+            IsAprilsFool = DateTime.Today.Month == 4 && DateTime.Today.Day == 1;
             currentSettings = settings.GetSettings();
             name = CurrentThemeName = themeManager.CurrentTheme;
             themes = themeManager.Themes.ToList();
@@ -45,12 +51,18 @@ namespace WoWDatabaseEditorCore.Avalonia.Services.AppearanceService.ViewModels
             RecommendedScalingPercentage =
                 (int)(((mainWindowHolder.RootWindow?.Screens?.Primary ?? mainWindowHolder.RootWindow?.Screens?.All?.FirstOrDefault())?.Scaling ?? 1) * 100);
             AllowCustomScaling = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+            ClassicThemeVariant = ClassicTheme.AllVariants.FirstOrDefault(x => x.Key?.ToString() == currentSettings.ThemeVariant);
             
             Save = new DelegateCommand(() =>
             {
                 themeManager.SetTheme(ThemeName);
                 themeManager.UpdateCustomScaling(useCustomScaling ? ScalingValue : null);
-                settings.UpdateSettings(ThemeName, UseCustomScaling ? Math.Clamp(ScalingValue, 0.5, 4) : null, color.H - AvaloniaThemeStyle.BaseHue, color.S, lightness);
+                settings.UpdateSettings(ThemeName,
+                    UseCustomScaling ? Math.Clamp(ScalingValue, 0.5, 4) : null,
+                    color.H - AvaloniaThemeStyle.BaseHue,
+                    color.S, lightness,
+                    DateTime.Today >= new DateTime(2025, 04, 01) ? DateTime.Today.Year : null,
+                    ClassicThemeVariant?.Key?.ToString());
                 currentSettings = settings.GetSettings();
                 CurrentThemeName = ThemeName;
                 RaisePropertyChanged(nameof(IsModified));
@@ -122,14 +134,26 @@ namespace WoWDatabaseEditorCore.Avalonia.Services.AppearanceService.ViewModels
             }
         }
 
+        [Notify] private ThemeVariant? classicThemeVariant;
+
         public ICommand Save { get; }
-        public string Name => "外观";
-        public string ShortDescription => "Wow 数据库编辑器提供了一些外观，请选择!";
+        public ImageUri Icon { get; } = new ImageUri("Icons/document_brush_big.png");
+        public string Name => "Appearance";
+        public string ShortDescription => "Wow Database Editor is supplied with few looks, check them out!";
         public bool IsRestartRequired => true;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;
 
         private double scalingValue;
         private bool useCustomScaling;
+
+        public void OnClassicThemeVariantChanged()
+        {
+            if (classicThemeVariant != null && SystemTheme.EffectiveTheme == SystemThemeOptions.Windows9x)
+            {
+                Application.Current!.RequestedThemeVariant = classicThemeVariant;
+            }
+            RaisePropertyChanged(nameof(IsModified));
+        }
 
         public bool IsModified =>
             currentSettings.UseCustomScaling != useCustomScaling ||
@@ -137,6 +161,7 @@ namespace WoWDatabaseEditorCore.Avalonia.Services.AppearanceService.ViewModels
             CurrentThemeName.Name != ThemeName.Name ||
             Math.Abs(currentSettings.Hue - (color.H - AvaloniaThemeStyle.BaseHue)) > 0.0001f ||
             Math.Abs(currentSettings.Saturation - color.S) > 0.0001f ||
-            Math.Abs(currentSettings.Lightness - lightness) > 0.0001f;
+            Math.Abs(currentSettings.Lightness - lightness) > 0.0001f ||
+            currentSettings.ThemeVariant != classicThemeVariant?.Key?.ToString();
     }
 }

@@ -23,8 +23,9 @@ namespace WoWDatabaseEditorCore.Services.QuickLoadService
         public ICommand RemoveDivider { get; }
         public ICommand SetVisibleAll { get; }
         public ICommand SetVisibleNone { get; }
-        public string Name => "快速开始";
-        public string? ShortDescription => "您可以配置快速启动面板的外观和主题";
+        public ImageUri Icon { get; } = new ImageUri("Icons/document_homepage_big.png");
+        public string Name => "Quick start";
+        public string? ShortDescription => "You can configure look and feel for you quick start panel";
 
         public bool IsModified
         {

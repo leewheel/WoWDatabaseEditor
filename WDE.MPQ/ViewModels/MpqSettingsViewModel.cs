@@ -4,6 +4,7 @@ using Prism.Mvvm;
 using WDE.Common;
 using WDE.Common.Managers;
 using WDE.Common.Services.MessageBox;
+using WDE.Common.Types;
 using WDE.Common.Utils;
 using WDE.Module.Attributes;
 
@@ -40,10 +41,10 @@ namespace WDE.MPQ.ViewModels
                     if (verifier.VerifyFolder(folder) == WoWFilesType.Invalid)
                     {
                         await messageBoxService.ShowDialog(new MessageBoxFactory<bool>()
-                            .SetTitle("WoW¿Í»§¶ËÊý¾Ý")
+                            .SetTitle("WoWï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
                             .SetMainInstruction("Invalid WoW folder")
                             .SetContent(
-                                "Õâ¿´ÆðÀ´²»ÏñÊÇÒ»¸öÕýÈ·µÄ WoW ÎÄ¼þ¼Ð¡£\n\nÑ¡ÔñÖ÷ÓÎÏ·ÎÄ¼þ¼Ð£¨wow.exe ÎÄ¼þ±ØÐë´æÔÚ£©¡£\n\nÏÖÔÚ²»Ö§³ÖÆäËû WoW °æ±¾¡£")
+                                "ï¿½â¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ WoW ï¿½Ä¼ï¿½ï¿½Ð¡ï¿½\n\nÑ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ä¼ï¿½ï¿½Ð£ï¿½wow.exe ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½\n\nï¿½ï¿½ï¿½Ú²ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ WoW ï¿½æ±¾ï¿½ï¿½")
                             .WithOkButton(true)
                             .Build());
                     }
@@ -80,9 +81,10 @@ namespace WDE.MPQ.ViewModels
         }
 
         public ICommand Save { get; set; }
-        public string Name => "¿Í»§¶ËÊý¾ÝÎÄ¼þ";
+        public string Name => "Client data files";
+        public ImageUri Icon { get; } = new ImageUri("Icons/document_file_big.png");
         public string ShortDescription =>
-            "¸Ã±à¼­Æ÷¿ÉÒÔ´ò¿ª 3.3.5¡¢4.3.4¡¢5.4.8 ºÍ 7.3.5 ÎÄ¼þÒÔÊµÏÖÀ©Õ¹¹¦ÄÜ¡£";
+            "ï¿½Ã±à¼­ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ 3.3.5ï¿½ï¿½4.3.4ï¿½ï¿½5.4.8 ï¿½ï¿½ 7.3.5 ï¿½Ä¼ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ü¡ï¿½";
         public bool IsModified { get; set; }
         public bool IsRestartRequired => true;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;

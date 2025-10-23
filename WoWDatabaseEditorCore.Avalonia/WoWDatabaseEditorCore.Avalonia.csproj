@@ -19,6 +19,10 @@
         <AvaloniaResource Include="IconSmall.png" />
         <None Remove="logo.png" />
         <AvaloniaResource Include="logo.png" />
+        <None Remove="Clippy\clippy.gif" />
+        <AvaloniaResource Include="Clippy\*.gif" />
+        <None Remove="logo.gif" />
+        <AvaloniaResource Include="logo.gif" />
     </ItemGroup>
     <Import Project="..\Avalonia.props" />
     <ItemGroup>
@@ -28,7 +32,6 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
         <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.7" />
         <PackageReference Include="SmartFormat.NET" Version="2.7.3" />
@@ -41,6 +44,7 @@
     <ItemGroup>
         <ProjectReference Include="..\AvaloniaStyles\AvaloniaStyles.csproj" />
         <ProjectReference Include="..\Dock\src\Dock.Model.Mvvm\Dock.Model.Mvvm.csproj" />
+        <ProjectReference Include="..\Libraries\Avalonia.Labs.Gif\Avalonia.Labs.Gif.csproj" />
         <ProjectReference Include="..\Prism.Avalonia\src\Prism.Unity.Avalonia\Prism.Unity.Avalonia.csproj" />
         <ProjectReference Include="..\Rendering\TheEngine\TheEngine.csproj" />
         <ProjectReference Include="..\WDE.Common.Avalonia\WDE.Common.Avalonia.csproj" />

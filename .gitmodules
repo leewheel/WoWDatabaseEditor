@@ -22,3 +22,9 @@
 [submodule "Libraries/DiffPlex.Avalonia"]
 	path = Libraries/DiffPlex.Avalonia
 	url = https://github.com/BAndysc/DiffPlex.Avalonia.git
+[submodule "Libraries/Classic.Avalonia"]
+	path = Libraries/Classic.Avalonia
+	url = https://github.com/BAndysc/Classic.Avalonia
+[submodule "Libraries/Avalonia.Controls.DataGrid"]
+	path = Libraries/Avalonia.Controls.DataGrid
+	url = https://github.com/BAndysc/Avalonia.Controls.DataGrid

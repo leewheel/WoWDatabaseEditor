@@ -700,8 +700,296 @@
             ]
         },
         {
-            "group_name": "POI",
-            "fields": [
+          "name": "Reward choice item quantity 2",
+          "db_column_name": "RewardChoiceItemQuantity2",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward choice item 3",
+          "db_column_name": "RewardChoiceItemID3",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward choice item quantity 3",
+          "db_column_name": "RewardChoiceItemQuantity3",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward choice item 4",
+          "db_column_name": "RewardChoiceItemID4",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward choice item quantity 4",
+          "db_column_name": "RewardChoiceItemQuantity4",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward choice item 5",
+          "db_column_name": "RewardChoiceItemID5",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward choice item quantity 5",
+          "db_column_name": "RewardChoiceItemQuantity5",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward choice item 6",
+          "db_column_name": "RewardChoiceItemID6",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward choice item quantity 6",
+          "db_column_name": "RewardChoiceItemQuantity6",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward item 1",
+          "db_column_name": "RewardItem1",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward amount 1",
+          "db_column_name": "RewardAmount1",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward item 2",
+          "db_column_name": "RewardItem2",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward amount 2",
+          "db_column_name": "RewardAmount2",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward item 3",
+          "db_column_name": "RewardItem3",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward amount 3",
+          "db_column_name": "RewardAmount3",
+          "value_type": "uint"
+        },
+        {
+          "name": "Reward item 4",
+          "db_column_name": "RewardItem4",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Reward amount 4",
+          "db_column_name": "RewardAmount4",
+          "value_type": "uint"
+        }
+      ]
+    },
+    {
+      "group_name": "Rewards",
+      "fields": [
+        {
+          "name": "Reward XP difficulty",
+          "db_column_name": "RewardXPDifficulty",
+          "value_type": "uint",
+          "help": "According to the Level, the basic experience with index RewardXPDifficulty is taken from QuestXP.dbc."
+        },
+        {
+          "name": "Reward money",
+          "db_column_name": "RewardMoney",
+          "value_type": "MoneyParameter",
+          "help": "Money earned by completing the quest (if value > 0) or money requirement to complete the quest (if value < 0)."
+        },
+        {
+          "name": "Reward money difficulty",
+          "db_column_name": "RewardMoneyDifficulty",
+          "value_type": "MoneyParameter"
+        },
+        /*{
+          "name": "Reward bonus money",
+          "db_column_name": "RewardBonusMoney",
+          "value_type": "MoneyParameter",
+          "help": "The money a character at level 80 would get when they complete this quest."
+        },*/
+        {
+          "name": "Reward display spell",
+          "db_column_name": "RewardDisplaySpell",
+          "value_type": "SpellParameter"
+        },
+        {
+          "name": "Reward spell",
+          "db_column_name": "RewardSpell",
+          "value_type": "SpellParameter"
+        },
+        {
+          "name": "Reward honor",
+          "db_column_name": "RewardHonor",
+          "value_type": "int",
+          "help": "Number of honorable kill honor rewarded for completing this quest."
+        },
+        {
+          "name": "Reward kill honor",
+          "db_column_name": "RewardKillHonor",
+          "value_type": "float"
+        },
+        {
+          "name": "Reward title",
+          "db_column_name": "RewardTitle",
+          "value_type": "CharTitleParameter"
+        },
+        {
+          "name": "Reward talents",
+          "db_column_name": "RewardTalents",
+          "value_type": "uint",
+          "help": "Will give X bonus talents to the player completed the quest. Leave '0' for No Bonus Talent Points."
+        },
+        {
+          "name": "Reward arena points",
+          "db_column_name": "RewardArenaPoints",
+          "value_type": "uint",
+          "help": "Will Give X Arena Points to the player that completes the quest. Leave '0' For no Arena Points Reward."
+        },
+        {
+          "name": "Reward faction id 1",
+          "db_column_name": "RewardFactionID1",
+          "value_type": "FactionParameter",
+          "help": "Faction for which the quest give reputation points.\nNumber of gain or lost reputation points for Faction at quest completion. This is special reputation rewarding. Normal reputation reward to quest rewarding creature faction calculated and added automatically."
+        },
+        {
+          "name": "Reward faction value 1",
+          "db_column_name": "RewardFactionValue1",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction override 1",
+          "db_column_name": "RewardFactionOverride1",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction id 2",
+          "db_column_name": "RewardFactionID2",
+          "value_type": "FactionParameter"
+        },
+        {
+          "name": "Reward faction value 2",
+          "db_column_name": "RewardFactionValue2",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction override 2",
+          "db_column_name": "RewardFactionOverride2",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction id 3",
+          "db_column_name": "RewardFactionID3",
+          "value_type": "FactionParameter"
+        },
+        {
+          "name": "Reward faction value 3",
+          "db_column_name": "RewardFactionValue3",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction override 3",
+          "db_column_name": "RewardFactionOverride3",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction id 4",
+          "db_column_name": "RewardFactionID4",
+          "value_type": "FactionParameter"
+        },
+        {
+          "name": "Reward faction value 4",
+          "db_column_name": "RewardFactionValue4",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction override 4",
+          "db_column_name": "RewardFactionOverride4",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction id 5",
+          "db_column_name": "RewardFactionID5",
+          "value_type": "FactionParameter"
+        },
+        {
+          "name": "Reward faction value 5",
+          "db_column_name": "RewardFactionValue5",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward faction override 5",
+          "db_column_name": "RewardFactionOverride5",
+          "value_type": "int"
+        },
+        {
+          "name": "Reward mail template ID",
+          "db_column_name": "RewardMailTemplateID",
+          "foreign_table": "quest_template_addon",
+          "value_type": "uint",
+          "help": "If the quest gives as a reward an item from a possible list of items, the ID here corresponds to the proper loot template in quest_mail_loot_template. According to the rules in that loot template, items \"looted\" will be sent by mail at the completion of the quest."
+        },
+        {
+          "name": "Reward mail delay (seconds)",
+          "db_column_name": "RewardMailDelay",
+          "foreign_table": "quest_template_addon",
+          "value_type": "uint",
+          "help": "How many seconds to wait until the mail is sent to the character that turned in a quest rewarding items from a loot template defined in RewardMailTemplateId"
+        }
+      ]
+    },
+    {
+      "group_name": "Items dropping",
+      "fields": [
+        {
+          "name": "Item drop 1",
+          "db_column_name": "ItemDrop1",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Item drop quantity 1",
+          "db_column_name": "ItemDropQuantity1",
+          "value_type": "uint"
+        },
+        {
+          "name": "Item drop 2",
+          "db_column_name": "ItemDrop2",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Item drop quantity 2",
+          "db_column_name": "ItemDropQuantity2",
+          "value_type": "uint"
+        },
+        {
+          "name": "Item drop 3",
+          "db_column_name": "ItemDrop3",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Item drop quantity 3",
+          "db_column_name": "ItemDropQuantity3",
+          "value_type": "uint"
+        },
+        {
+          "name": "Item drop 4",
+          "db_column_name": "ItemDrop4",
+          "value_type": "ItemParameter"
+        },
+        {
+          "name": "Item drop quantity 4",
+          "db_column_name": "ItemDropQuantity4",
+          "value_type": "uint"
+        }
+      ]
+    },
+    {
+      "group_name": "POI",
+      "fields": [
 
                 {
                     "name": "POI Continent",
@@ -726,5 +1014,7 @@
                 }
             ]
         }
-    ]
+      ]
+    }
+  ]
 }

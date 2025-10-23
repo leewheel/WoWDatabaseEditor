@@ -14,8 +14,11 @@
                 <SettingItem Header="当前主题">
                     <TextBlock FontWeight="Bold" Text="{CompiledBinding CurrentThemeName}" />
                 </SettingItem>
-                <SettingItem Header="主题">
-                    <ComboBox Margin="30,0,0,0" VerticalAlignment="Top" ItemsSource="{CompiledBinding Themes}"
+                <SettingItem Header="April's Fool!" IsVisible="{CompiledBinding IsAprilsFool}">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="Classic Windows 95/98 theme is an April's Fool joke, but honestly, I like it so much that it won't be removed :) You can go back to Windows 10/11 theme if you prefer or embrace tradition!" />
+                </SettingItem>
+                <SettingItem Header="Theme">
+                    <ComboBox VerticalAlignment="Top" ItemsSource="{CompiledBinding Themes}"
                               SelectedItem="{CompiledBinding ThemeName, Mode=TwoWay}" />
                 </SettingItem>
                 <SettingItem Header="主色调" Help="信息：自定义主色调仅在 Windows 11 主题中可用。">
@@ -23,6 +26,9 @@
                         <Slider DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Stretch" Value="{CompiledBinding Lightness}" Name="Lightness" Minimum="0" Maximum="1" />
                         <WdeColorPicker Lightness="{CompiledBinding Lightness}" SelectedColor="{CompiledBinding Color, Mode=TwoWay}" Width="200" Height="120" />
                     </DockPanel>
+                </SettingItem>
+                <SettingItem Header="Colors" Help="Info: Colors are available only in Windows 9x Theme">
+                    <ComboBox ItemsSource="{x:Static ClassicTheme.AllVariants}" SelectedItem="{CompiledBinding ClassicThemeVariant}" />
                 </SettingItem>
             </StackPanel>
             

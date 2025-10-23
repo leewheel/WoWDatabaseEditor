@@ -5,6 +5,8 @@ This project is a continuation of [Visual SAI Studio](https://github.com/Bandysc
 
 (screenshots below)
 
+![aprilsfool](https://raw.githubusercontent.com/BAndysc/WoWDatabaseEditor/master/Examples/aprilsfool.png)
+
 # Supported server versions
 
  * Supported database: TC 3.3.5, TC 4.3.4 ("preservation project"), TC master (10.0.x), AzerothCore (3.3.5)
@@ -22,7 +24,7 @@ Application has a built-in auto updater, so you do **not** have to redownload a 
 
 ## Mac OS / Linux / Windows version
 
-**To run the editor, you need [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/6.0) for your OS**.
+**To run the editor, you need [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) for your OS**.
 
 WoW Database Editor is compatibile with both MacOS, Linux and Windows.
 

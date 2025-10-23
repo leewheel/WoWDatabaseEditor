@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Prism.Commands;
 using WDE.Common;
 using WDE.Common.Sessions;
+using WDE.Common.Types;
 using WDE.Module.Attributes;
 using WDE.MVVM;
 
@@ -15,9 +16,10 @@ namespace WDE.Sessions.Sessions
         private bool? deleteOnSave;
         private bool isModified;
         public ICommand Save { get; }
-        public string Name => "»á»°";
+        public ImageUri Icon { get; } = new ImageUri("Icons/document_groupofprojects_big.png");
+        public string Name => "Sessions";
         public string? ShortDescription =>
-            "»á»°ÔÊÐíÄúÇáËÉÉú³É SQL£¬ÆäÖÐ°üº¬×ÔÉÏ´Î¿ªÊ¼»á»°ÒÔÀ´Ëù×öµÄ¸ü¸Ä";
+            "ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SQLï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Î¿ï¿½Ê¼ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½";
         public bool IsRestartRequired => false;
         public ConfigurableGroup Group => ConfigurableGroup.Basic;
 

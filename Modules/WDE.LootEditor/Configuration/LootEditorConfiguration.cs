@@ -12,6 +12,7 @@ using WDE.Common.Database;
 using WDE.Common.Managers;
 using WDE.Common.Parameters;
 using WDE.Common.Services;
+using WDE.Common.Types;
 using WDE.Common.Utils;
 using WDE.Common.Utils.DragDrop;
 using WDE.LootEditor.Editor;
@@ -33,7 +34,8 @@ public partial class LootEditorConfiguration : ObservableBase, IConfigurable, ID
     [Notify] private bool isModified;
     
     public ICommand Save { get; }
-    public string Name { get; } = "Õ½ÀûÆ·±à¼­Æ÷";
+    public ImageUri Icon { get; } = new ImageUri("Icons/document_moneybagbitcoin_big.png");
+    public string Name { get; } = "Loot editor";
     public string? ShortDescription => null;
     public bool IsRestartRequired => false;
     public ConfigurableGroup Group => ConfigurableGroup.Basic;

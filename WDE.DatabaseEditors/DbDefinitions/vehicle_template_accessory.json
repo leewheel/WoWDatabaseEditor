@@ -1,27 +1,27 @@
 {
-    "id": "vehicle_template_accessory",
-    "compatibility": [
-        "TrinityWrath",
-        "Azeroth",
-        "TrinityMaster",
-        "TrinityCata"
-    ],
-    "name": "载具模板辅助",
-    "single_solution_name": "{name}'s vehicle accessories",
-    "multi_solution_name": "Multiple vehicles accessories",
-    "description": "Use this table to define creatures that will spawn automatically on a vehicle",
-    "table_name": "vehicle_template_accessory",
-    "table_index_name": "entry",
-    "record_mode": "MultiRecord",
-    "reload_command": "reload vehicle_template_accessory",
-    "group_name": "Vehicles",
-    "icon_path": "Icons/document_vehicle_template.png",
-    "picker": "CreatureParameter",
-    "primary_key": [
-        "entry",
-        "seat_id"
-    ],
-    "groups": [
+  "id": "vehicle_template_accessory",
+  "compatibility": [
+    "TrinityWrath", "Azeroth", "TrinityCata"
+  ],
+  "name": "Vehicle Template Accessory",
+  "single_solution_name": "{name}'s vehicle accessories",
+  "multi_solution_name": "Multiple vehicles accessories",
+  "description": "Use this table to define creatures that will spawn automatically on a vehicle",
+  "table_name": "vehicle_template_accessory",
+  "table_index_name": "entry",
+  "record_mode": "MultiRecord",
+  "reload_command": "reload vehicle_template_accessory",
+  "group_name": "Vehicles",
+  "icon_path": "Icons/document_vehicle_template.png",
+  "picker": "CreatureParameter",
+  "primary_key": [
+    "entry",
+    "seat_id"
+  ],
+  "groups": [
+    {
+      "group_name": "group",
+      "fields": [
         {
             "group_name": "group",
             "fields": [
